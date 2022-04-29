@@ -1,0 +1,10 @@
+{
+  "name": "Figma-Vox-1",
+  "id": "1101570720827216907",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": [
+    "figma"
+  ],
+  "ui": "ui.html"
+}
