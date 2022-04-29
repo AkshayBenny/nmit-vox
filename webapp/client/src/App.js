@@ -14,35 +14,6 @@ export default function App() {
     useLegacyResults: false,
   });
 
-  // useEffect(() => {
-  //   try {
-  //     fetch('http://localhost:8000/api/commands')
-  //       .then((res) => res.json())
-
-  //       .then((data) => setData(data));
-  //   } catch (error) {
-  //     console.log('Error fetching data: ' + error);
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   try {
-  //     fetch('http://localhost:8000/api/commands', {
-  //       method: 'POST',
-
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify(voiceCommand),
-  //     })
-  //       .then((res) => res.json())
-  //       .then((myRes) => console.log(myRes));
-  //   } catch (error) {
-  //     console.log('Error posting data: ' + error);
-  //   }
-  // }, [voiceCommand]);
-
-  // console.log(data);
   if (error) return <p>Web Speech API is not available in this browser 🤷‍</p>;
 
   return (

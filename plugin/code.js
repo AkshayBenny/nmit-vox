@@ -19,7 +19,7 @@ figma.showUI(__html__);
 // posted message.
 figma.ui.postMessage({ type: 'networkRequest' });
 figma.ui.onmessage = (msg) => __awaiter(this, void 0, void 0, function* () {
-    if (msg.replace(/^"|"$/g, '') == 'create frame') {
+    if (msg.replace(/^"|"$/g, '') == 'hello') {
         const frame = figma.createFrame();
         frame.resize(1080, 600);
         figma.currentPage.appendChild(frame);

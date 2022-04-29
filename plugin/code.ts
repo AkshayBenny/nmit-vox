@@ -13,10 +13,11 @@ figma.showUI(__html__);
 // posted message.
 figma.ui.postMessage({ type: 'networkRequest' });
 figma.ui.onmessage = async (msg) => {
-  if (msg.replace(/^"|"$/g, '') == 'create frame') {
+  if (msg.replace(/^"|"$/g, '') == 'hello') {
     const frame = figma.createFrame();
     frame.resize(1080, 600);
     figma.currentPage.appendChild(frame);
+
     figma.closePlugin();
   }
   // figma.closePlugin()
