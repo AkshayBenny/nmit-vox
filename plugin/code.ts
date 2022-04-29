@@ -11,16 +11,16 @@ figma.showUI(__html__);
 // Calls to "parent.postMessage" from within the HTML page will trigger this
 // callback. The callback will be passed the "pluginMessage" property of the
 // posted message.
-figma.ui.postMessage({ type: 'networkRequest' })
-
+figma.ui.postMessage({ type: 'networkRequest' });
 figma.ui.onmessage = async (msg) => {
-  if (msg.replace(/^"|"$/g, '') == "create frame"){
+  if (msg.replace(/^"|"$/g, '') == 'create frame') {
     const frame = figma.createFrame();
     frame.resize(1080, 600);
     figma.currentPage.appendChild(frame);
+    figma.closePlugin();
   }
-  figma.closePlugin()
-}
+  // figma.closePlugin()
+};
 
 // figma.ui.onmessage = msg => {
 //   if (msg.type === 'create-rectangles') {

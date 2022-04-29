@@ -19,25 +19,24 @@ router.post('/', async (req, res) => {
 //get latest commands
 router.get('/', async (req, res) => {
   try {
-    let commands = await Command.find().sort({ createdAt: -1 }).limit(1);
-    res.status(200).json(commands);
+    let commands = await Command.find().sort({ _id: -1 }).limit(1);
+    let command = commands[0].command;
+    res.status(200).json(command.replace(/\s+/, ''));
   } catch (error) {
     res.status(500).json({ message: 'Could not fetch all commands', error });
   }
 });
 
-//clean collection
-
-// router.get('/clean', async (req, res) => {
-//   try {
-//     Command.deleteMany({}, (err) => {
-//       res.status(200).json({ message: 'Cleaned database' });
-//       if()
-//     });
-//   } catch (error) {
-//     res.json({ message: 'Could not clean database', error: error });
-//   }
-// });
+// clean collection
+router.get('/clean', async (req, res) => {
+  try {
+    Command.deleteMany({}, (err) => {
+      res.status(200).json({ message: 'Cleaned database' });
+    });
+  } catch (error) {
+    res.json({ message: 'Could not clean database', error: error });
+  }
+});
 
 //get a command based on ID
 router.get('/find/:id', async (req, res) => {

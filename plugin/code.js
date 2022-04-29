@@ -19,12 +19,13 @@ figma.showUI(__html__);
 // posted message.
 figma.ui.postMessage({ type: 'networkRequest' });
 figma.ui.onmessage = (msg) => __awaiter(this, void 0, void 0, function* () {
-    if (msg.replace(/^"|"$/g, '') == "create frame") {
+    if (msg.replace(/^"|"$/g, '') == 'create frame') {
         const frame = figma.createFrame();
         frame.resize(1080, 600);
         figma.currentPage.appendChild(frame);
+        figma.closePlugin();
     }
-    figma.closePlugin();
+    // figma.closePlugin()
 });
 // figma.ui.onmessage = msg => {
 //   if (msg.type === 'create-rectangles') {

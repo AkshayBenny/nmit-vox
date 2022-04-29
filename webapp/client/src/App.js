@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import useSpeechToText from 'react-hook-speech-to-text';
 
 export default function App() {
-  // const [data, setData] = useState([]);
-  const [voiceCommand, setVoiceCommand] = useState('');
-
   const {
     error,
     interimResult,
@@ -27,7 +24,6 @@ export default function App() {
   //     console.log('Error fetching data: ' + error);
   //   }
   // }, []);
-  console.log(voiceCommand);
 
   // useEffect(() => {
   //   try {
