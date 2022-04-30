@@ -1,10 +1,11 @@
 {
-  "name": "Figma-Vox-1",
-  "id": "1101570720827216907",
+  "name": "Figma Plugin Template",
+  "id": "00000000",
   "api": "1.0.0",
-  "main": "code.js",
+  "main": "dist/code.js",
+  "ui": "dist/ui.html",
   "editorType": [
-    "figma"
-  ],
-  "ui": "ui.html"
+    "figma",
+    "figjam"
+  ]
 }
